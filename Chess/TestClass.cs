@@ -48,25 +48,25 @@ namespace Chess
         [Test]
         public void PawnShouldBeCorrectMove0()
         {
-            ChessFigure figure = new ChessPawn(ChessFigure.Type.PAWN, "E2");
+            ChessFigure figure = new ChessFigure(ChessFigure.Type.PAWN, "E2");
             Assert.AreEqual(true,figure.Move("E3"));
         }
         [Test]
         public void PawnShouldBeCorrectMove1()
         {
-            ChessFigure figure = new ChessPawn(ChessFigure.Type.PAWN, "E2");
+            ChessFigure figure = new ChessFigure(ChessFigure.Type.PAWN, "E2");
             Assert.AreEqual(true,figure.Move("E4"));
         }
         [Test]
         public void PawnShouldBeCorrectMove2()
         {
-            ChessFigure figure = new ChessPawn(ChessFigure.Type.PAWN, "E4");
+            ChessFigure figure = new ChessFigure(ChessFigure.Type.PAWN, "E4");
             Assert.AreEqual(true,figure.Move("E5"));
         }   
         [Test]
         public void PawnShouldBeIncorrectMove()
         {
-            ChessFigure figure = new ChessPawn(ChessFigure.Type.PAWN, "E2");
+            ChessFigure figure = new ChessFigure(ChessFigure.Type.PAWN, "E2");
             Assert.AreEqual(false,figure.Move("C5"));
         }
         [Test]
