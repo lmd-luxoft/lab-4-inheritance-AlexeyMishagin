@@ -5,8 +5,8 @@ namespace Chess
 {
     public class ChessFigure
     {
-        private Type type;
-        private string currentCoord;
+		protected Type type;
+		protected string currentCoord;
 
         public ChessFigure(Type type, string currentCoord)
         {
@@ -14,7 +14,7 @@ namespace Chess
             this.currentCoord = currentCoord;
         }
 
-        public enum Type
+		public enum Type
         {
             ROOK,
             KNIGHT,
@@ -24,7 +24,7 @@ namespace Chess
             QUEEN
         }
 
-        internal bool Move(string nextCoord)
+        internal virtual bool Move(string nextCoord)
         {
 			if (type == Type.PAWN)
 			{
