@@ -26,20 +26,8 @@ namespace Chess
 
         internal virtual bool Move(string nextCoord)
         {
-			if (type == Type.PAWN)
-			{
-				if (IsCurrentNextCoord(nextCoord))
-				{
-					if (nextCoord[0] != currentCoord[0] || nextCoord[1] <= currentCoord[1] || (nextCoord[1] - currentCoord[1] != 1 && (currentCoord[1] != '2' || nextCoord[1] != '4')))
-						return false;
-					else
-						return true;
-				}
-				else return false;
-
-			}
-
-			else if (type == Type.ROOK)
+			
+			if (type == Type.ROOK)
 			{
 				if (IsCurrentNextCoord(nextCoord))
 				{
