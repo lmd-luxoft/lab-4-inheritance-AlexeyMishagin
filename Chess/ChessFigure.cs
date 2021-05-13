@@ -28,7 +28,7 @@ namespace Chess
         {
 			if (type == Type.PAWN)
 			{
-				if (nextCoord[0] >= 'A' && nextCoord[0] <= 'H' && nextCoord[1] >= '1' && nextCoord[1] <= '8')
+				if (IsCurrentNextCoord(nextCoord))
 				{
 					if (nextCoord[0] != currentCoord[0] || nextCoord[1] <= currentCoord[1] || (nextCoord[1] - currentCoord[1] != 1 && (currentCoord[1] != '2' || nextCoord[1] != '4')))
 						return false;
@@ -41,7 +41,7 @@ namespace Chess
 
 			else if (type == Type.ROOK)
 			{
-				if (nextCoord[0] >= 'A' && nextCoord[0] <= 'H' && nextCoord[1] >= '1' && nextCoord[1] <= '8')
+				if (IsCurrentNextCoord(nextCoord))
 				{
 					if ((nextCoord[0] != currentCoord[0]) && (nextCoord[1] != currentCoord[1]) || ((nextCoord[0] == currentCoord[0]) && (nextCoord[1] == currentCoord[1])))
 						return false;
@@ -53,7 +53,7 @@ namespace Chess
 			}
 			else if (type == Type.KNIGHT)
 			{
-				if (nextCoord[0] >= 'A' && nextCoord[0] <= 'H' && nextCoord[1] >= '1' && nextCoord[1] <= '8')
+				if (IsCurrentNextCoord(nextCoord))
 				{
 					int dx, dy;
 					dx = Math.Abs(nextCoord[0] - currentCoord[0]);
@@ -68,7 +68,7 @@ namespace Chess
 
 			else if (type == Type.BISHOP)
 			{
-				if (nextCoord[0] >= 'A' && nextCoord[0] <= 'H' && nextCoord[1] >= '1' && nextCoord[1] <= '8')
+				if (IsCurrentNextCoord(nextCoord))
 				{
 					if (!(Math.Abs(nextCoord[0] - currentCoord[0]) == Math.Abs(nextCoord[1] - currentCoord[1])))
 						return false;
@@ -80,7 +80,7 @@ namespace Chess
 
 			else if (type == Type.KING)
 			{
-				if (nextCoord[0] >= 'A' && nextCoord[0] <= 'H' && nextCoord[1] >= '1' && nextCoord[1] <= '8')
+				if (IsCurrentNextCoord(nextCoord))
 				{
 					if (!(Math.Abs(nextCoord[0] - currentCoord[0]) <= 1 && Math.Abs(nextCoord[1] - currentCoord[1]) <= 1))
 						return false;
@@ -91,7 +91,7 @@ namespace Chess
 			}
 			else if (type == Type.QUEEN)
 			{
-				if (nextCoord[0] >= 'A' && nextCoord[0] <= 'H' && nextCoord[1] >= '1' && nextCoord[1] <= '8')
+				if (IsCurrentNextCoord(nextCoord))
 				{
 					if (!(Math.Abs(nextCoord[0] - currentCoord[0]) == Math.Abs(nextCoord[1] - currentCoord[1]) || nextCoord[0] == currentCoord[0] || nextCoord[1] == currentCoord[1]))
 						return false;
@@ -102,6 +102,13 @@ namespace Chess
 			}
 			else
 				return false;
+		}
+
+		internal bool IsCurrentNextCoord(string nextCoord)
+		{
+			if (nextCoord[0] >= 'A' && nextCoord[0] <= 'H' && nextCoord[1] >= '1' && nextCoord[1] <= '8')
+				return true;
+			return false;
 		}
     }
 }
