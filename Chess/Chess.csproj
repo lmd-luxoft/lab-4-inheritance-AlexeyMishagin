@@ -40,8 +40,14 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chess.cs" />
+    <Compile Include="ChessBishop.cs" />
     <Compile Include="ChessFigure.cs" />
+    <Compile Include="ChessKing.cs" />
+    <Compile Include="ChessKnight.cs" />
     <Compile Include="ChessPawn.cs" />
+    <Compile Include="ChessQueen.cs" />
+    <Compile Include="ChessRook.cs" />
     <Compile Include="TestClass.cs" />
   </ItemGroup>
   <ItemGroup>
